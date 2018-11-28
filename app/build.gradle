@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.nikitvad.oryanmat.trellowidget"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 15
+        versionName "1.5"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.larswerkman:HoloColorPicker:1.5'
+    implementation 'com.android.volley:volley:1.1.0'
+
+    //dagger
+    implementation 'com.google.dagger:dagger:2.16'
+    implementation 'com.google.dagger:dagger-android:2.16'
+    implementation 'com.google.dagger:dagger-android-support:2.16'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    kapt "com.google.dagger:dagger-android-processor:2.16"
+    kapt "com.google.dagger:dagger-compiler:2.16"
+
+    //api
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+
+
+}

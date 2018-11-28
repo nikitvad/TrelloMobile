@@ -1,0 +1,85 @@
+<resources>
+    <string name="pref_title">Widget Settings</string>
+
+    <string name="pref_text_size_key">text_size_scale</string>
+    <string name="pref_text_size_title">Text size</string>
+    <string name="pref_text_size_desc">Adjust the text size</string>
+    <string name="pref_text_size_default">1.0</string>
+    <string name="pref_text_size_very_small">Very small</string>
+    <string name="pref_text_size_small">Small</string>
+    <string name="pref_text_size_medium">Medium</string>
+    <string name="pref_text_size_large">Large</string>
+    <string name="pref_text_size_very_large">Very large</string>
+
+    <string-array name="pref_text_size_entries">
+        <item>@string/pref_text_size_very_small</item>
+        <item>@string/pref_text_size_small</item>
+        <item>@string/pref_text_size_medium</item>
+        <item>@string/pref_text_size_large</item>
+        <item>@string/pref_text_size_very_large</item>
+    </string-array>
+    <string-array name="pref_text_size_values">
+        <item>0.6</item>
+        <item>0.8</item>
+        <item>1.0</item>
+        <item>1.25</item>
+        <item>1.75</item>
+    </string-array>
+
+    <string name="pref_title_back_color_key">title_back_color</string>
+    <string name="pref_title_back_color_title">Title background</string>
+    <string name="pref_title_back_color_desc">Change the background color of the title</string>
+    <integer name="pref_title_back_color_default">0xDD000000</integer>
+
+    <string name="pref_title_fore_color_key">title_fore_color</string>
+    <string name="pref_title_fore_color_title">Title foreground</string>
+    <string name="pref_title_fore_color_desc">Change the foreground color of the title</string>
+    <integer name="pref_title_fore_color_default">0xFFFFFFFF</integer>
+
+    <string name="pref_back_color_key">back_color</string>
+    <string name="pref_back_color_title">List background</string>
+    <string name="pref_back_color_desc">Change the background color of the card list</string>
+    <integer name="pref_back_color_default">0xAA000000</integer>
+
+    <string name="pref_fore_color_key">fore_color</string>
+    <string name="pref_fore_color_title">List foreground</string>
+    <string name="pref_fore_color_desc">Change the foreground color of the card list</string>
+    <integer name="pref_fore_color_default">0xFFFFFFFF</integer>
+
+    <string name="pref_title_use_unique_color_key">title_use_unique_color</string>
+    <string name="pref_title_use_unique_color_title">Unique title colors</string>
+    <string name="pref_title_use_unique_color_desc">Choose separate colors for the widget title</string>
+    <bool name="pref_title_use_unique_color_default">false</bool>
+
+    <string name="pref_update_interval_key">interval_list</string>
+    <string name="pref_update_interval_title">Refresh interval</string>
+    <string name="pref_update_interval_desc">Adjust widget update interval</string>
+    <string name="pref_update_interval_value_desc">Refresh lists every %s</string>
+    <string name="pref_update_interval_default">900000</string>
+
+    <string name="pref_display_board_name_key">display_board_name</string>
+    <string name="pref_display_board_name_title">Display board name</string>
+    <string name="pref_display_board_name_desc">Display board name in the widget title</string>
+    <bool name="pref_display_board_name_default">false</bool>
+
+    <string-array name="pref_update_interval_titles">
+        <item>15 minutes</item>
+        <item>half hour</item>
+        <item>hour</item>
+        <item>6 hours</item>
+        <item>24 hours</item>
+    </string-array>
+    <string-array name="pref_update_interval_values">
+        <item>900000</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>21600000</item>
+        <item>86400000</item>
+    </string-array>
+
+    <string name="pref_title_onclick_key">title_onclick</string>
+    <string name="pref_title_onclick_title">Open Trello</string>
+    <string name="pref_title_onclick_desc">Press the widget\'s title to open Trello</string>
+    <bool name="pref_title_onclick_default">true</bool>
+
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card">
+
+    <LinearLayout
+        android:id="@+id/labels_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/title_padding"
+        android:paddingStart="@dimen/title_padding"/>
+
+    <TextView
+        android:id="@+id/card_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labels_layout"
+        android:paddingEnd="@dimen/title_padding"
+        android:paddingStart="@dimen/title_padding"
+        android:paddingTop="@dimen/card_padding_top"
+        android:text="@string/card_title" />
+
+    <LinearLayout
+        android:id="@+id/badges_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_title"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/title_padding"
+        android:paddingStart="@dimen/title_padding">
+
+        <ImageView
+            android:id="@+id/subscribed"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/card_subscribed_desc"
+            android:src="@drawable/ic_visibility_white_24dp" />
+
+        <ImageView
+            android:id="@+id/votes"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/votes_desc"
+            android:src="@drawable/ic_thumb_up_white_24dp" />
+
+        <TextView
+            android:id="@+id/vote_count"
+            style="@style/WidgetItemBadge" />
+
+        <ImageView
+            android:id="@+id/due"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/due_date_desc"
+            android:src="@drawable/ic_access_time_white_24dp" />
+
+        <TextView
+            android:id="@+id/due_string"
+            style="@style/WidgetItemBadge" />
+
+        <ImageView
+            android:id="@+id/desc"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/card_desc_desc"
+            android:src="@drawable/ic_subject_white_24dp" />
+
+        <ImageView
+            android:id="@+id/comments"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/comments_desc"
+            android:src="@drawable/ic_chat_bubble_outline_white_24dp" />
+
+        <TextView
+            android:id="@+id/comment_count"
+            style="@style/WidgetItemBadge" />
+
+        <ImageView
+            android:id="@+id/attachment"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/attachments_desc"
+            android:src="@drawable/ic_attachment_white_24dp" />
+
+        <TextView
+            android:id="@+id/attachment_count"
+            style="@style/WidgetItemBadge" />
+
+        <ImageView
+            android:id="@+id/checklist"
+            style="@style/WidgetItemBadge"
+            android:contentDescription="@string/checklist_desc"
+            android:src="@drawable/ic_check_box_white_24dp" />
+
+        <TextView
+            android:id="@+id/checklist_count"
+            style="@style/WidgetItemBadge" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/list_item_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/badges_layout"
+        android:layout_marginTop="@dimen/card_padding_bottom"
+        android:src="@drawable/divider"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

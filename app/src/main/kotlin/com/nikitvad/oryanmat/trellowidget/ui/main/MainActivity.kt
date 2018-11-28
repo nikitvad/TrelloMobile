@@ -10,6 +10,7 @@ import com.nikitvad.oryanmat.trellowidget.R
 import com.nikitvad.oryanmat.trellowidget.data.Api
 import com.nikitvad.oryanmat.trellowidget.old.activity.LoggedInFragment
 import com.nikitvad.oryanmat.trellowidget.old.activity.LoginFragment
+import com.nikitvad.oryanmat.trellowidget.ui.boards.BoardsActivity
 import com.nikitvad.oryanmat.trellowidget.util.PreferencesUtil
 import com.nikitvad.oryanmat.trellowidget.util.TOKEN_PREF_KEY
 import com.nikitvad.oryanmat.trellowidget.util.preferences
@@ -24,6 +25,9 @@ class MainActivity : DaggerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val intent = Intent(this, BoardsActivity::class.java)
+        startActivity(intent)
 
         if (savedInstanceState == null) {
             val userToken = preferences().getString(TOKEN_PREF_KEY, "")

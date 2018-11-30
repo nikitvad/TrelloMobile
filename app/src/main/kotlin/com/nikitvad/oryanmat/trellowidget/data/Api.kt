@@ -1,5 +1,7 @@
 package com.nikitvad.oryanmat.trellowidget.data
 
+import com.nikitvad.oryanmat.trellowidget.old.model.Board
+import com.nikitvad.oryanmat.trellowidget.old.model.BoardList
 import com.nikitvad.oryanmat.trellowidget.old.model.User
 import io.reactivex.Observable
 import retrofit2.Response
@@ -28,10 +30,10 @@ interface Api {
 
 
     @GET("members/me/boards?filter=open&fields=id,name,url&lists=open")
-    fun getBoards(): Observable<String>
+    fun getBoards(): Observable<Response<List<Board>>>
 
     @GET("lists/%s?cards=open&card_fields=name,badges,labels,url")
-    fun getCards(): Observable<String>
+    fun getCards(): Observable<Response<List<BoardList>>>
 
 
 }

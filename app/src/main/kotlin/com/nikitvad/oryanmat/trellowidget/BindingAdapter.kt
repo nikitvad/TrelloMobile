@@ -9,7 +9,7 @@ class BindingAdapter{
     companion object {
 
         @BindingAdapter("adapter")
-        fun recyclerAdapter(recyclerView: RecyclerView, adapter:NiceRecyclerAdapter<out ViewDataBinding, Any>){
+        fun recyclerAdapter(recyclerView: RecyclerView, adapter:NiceRecyclerAdapter< ViewDataBinding, Any>){
             recyclerView.adapter = adapter
         }
     }

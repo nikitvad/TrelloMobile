@@ -4,10 +4,12 @@ import android.databinding.BaseObservable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-abstract class BaseViewModel : BaseObservable(){
+abstract class BaseViewModel<T: Navigator> : BaseObservable(){
     val compositeDisposable = CompositeDisposable()
 
-    fun onBind(){}
+    open fun onBind(){}
+
+    var navigator:T? = null
 
     fun unBind() {
         compositeDisposable.clear()

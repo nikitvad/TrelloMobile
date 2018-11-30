@@ -61,7 +61,8 @@
             android:name=".old.widget.WidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
-        <activity android:name=".ui.boards.BoardsActivity"></activity>
+        <activity android:name=".ui.boards.BoardsActivity" />
+        <activity android:name=".ui.board.BoardActivity"></activity>
     </application>
 
 </manifest>

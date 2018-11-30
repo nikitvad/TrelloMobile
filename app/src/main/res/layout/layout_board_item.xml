@@ -18,12 +18,13 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:background="@android:color/white"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_marginBottom="@dimen/padding"
         app:cardCornerRadius="4dp">
 
         <View
             android:layout_width="match_parent"
-            android:background="@{datamodel.name.hashCode()}"
+            android:background="@{datamodel.name.hashCode()*32}"
             android:layout_height="5dp"/>
 
         <android.support.constraint.ConstraintLayout

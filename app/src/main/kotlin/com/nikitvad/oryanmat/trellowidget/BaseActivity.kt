@@ -5,7 +5,7 @@ import android.databinding.ViewDataBinding
 import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
 
-abstract class BaseActivity<T : BaseViewModel, VB : ViewDataBinding> : DaggerAppCompatActivity() {
+abstract class BaseActivity<T : BaseViewModel<out Navigator>, VB : ViewDataBinding> : DaggerAppCompatActivity() {
     lateinit var viewBinding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -19,7 +19,7 @@
             android:overScrollMode="never"
             android:orientation="vertical"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"
-            adapter=""
+            adapter="@{viewModel.adapter}"
             android:layout_height="wrap_content"/>
 
     </android.support.constraint.ConstraintLayout>

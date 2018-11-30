@@ -7,10 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class NiceRecyclerAdapter<T: ViewDataBinding, D> constructor(val items:List<D>, var itemLayoutId: Int) : RecyclerView.Adapter<NiceViewHolder<T, D>>() {
+class NiceRecyclerAdapter<T : ViewDataBinding, D> constructor(val items: List<D>, var itemLayoutId: Int, val onItemClickListener: OnItemClickListener<D>) : RecyclerView.Adapter<NiceRecyclerAdapter<T, D>.NiceViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NiceViewHolder<T, D> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NiceViewHolder {
         return NiceViewHolder(LayoutInflater.from(parent.context).inflate(itemLayoutId, parent, false))
     }
 
@@ -18,22 +18,23 @@ class NiceRecyclerAdapter<T: ViewDataBinding, D> constructor(val items:List<D>, 
         return items.size
     }
 
-    override fun onBindViewHolder(holder: NiceViewHolder<T, D>, position: Int) {
+    override fun onBindViewHolder(holder: NiceViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
-//    fun setItems(newItems: List<D>){
-//        items.clear()
-//        items.addAll(newItems)
-//        notifyDataSetChanged()
-//    }
+    inner class NiceViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+        fun bind(data: D) {
+            val binding = DataBindingUtil.bind<T>(itemView)
+            binding!!.setVariable(BR.datamodel, data)
+            binding.executePendingBindings()
+            itemView.setOnClickListener {  onItemClickListener.onItemClick(adapterPosition, data)}
 
+        }
+
+    }
 }
 
-class NiceViewHolder<T: ViewDataBinding, D>(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-    fun bind(data: D){
-        val binding = DataBindingUtil.bind<T>(itemView)
-        binding!!.setVariable(BR.datamodel, data)
-        binding.executePendingBindings()
-    }
+
+interface OnItemClickListener<D> {
+    fun onItemClick(pos: Int, item: D)
 }

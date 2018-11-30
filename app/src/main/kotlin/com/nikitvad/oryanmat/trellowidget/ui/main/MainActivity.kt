@@ -4,6 +4,7 @@ import android.app.Fragment
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import com.nikitvad.oryanmat.trellowidget.R
@@ -26,13 +27,13 @@ class MainActivity : DaggerActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = Intent(this, BoardsActivity::class.java)
-        startActivity(intent)
+        val userToken = preferences().getString(TOKEN_PREF_KEY, "")
 
-        if (savedInstanceState == null) {
-            val userToken = preferences().getString(TOKEN_PREF_KEY, "")
-            replaceFragment(if (userToken.isEmpty()) LoginFragment() else LoggedInFragment())
+        if(!TextUtils.isEmpty(userToken)){
+            val intent = Intent(this, BoardsActivity::class.java)
+            startActivity(intent)
         }
+
     }
 
     fun startBrowserWithAuthURL(view: View) {
@@ -58,6 +59,9 @@ class MainActivity : DaggerActivity() {
                 .apply()
 
         replaceFragment(LoggedInFragment())
+
+        val intent = Intent(this, BoardsActivity::class.java)
+        startActivity(intent)
     }
 
     @JvmOverloads
